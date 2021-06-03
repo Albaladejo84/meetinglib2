@@ -4,9 +4,6 @@ plugins {
 	id 'eclipse'
 }
 
-group = 'es.mde'
-version = '0.0.1-SNAPSHOT'
-
 targetCompatibility = '11'
 sourceCompatibility = '11'
 
