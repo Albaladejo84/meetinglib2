@@ -1,0 +1,6 @@
+package es.mde.entities;
+
+public interface Event {
+
+	public boolean checkAssetsCorrect();
+}
