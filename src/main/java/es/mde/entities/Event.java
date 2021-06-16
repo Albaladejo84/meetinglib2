@@ -2,5 +2,5 @@ package es.mde.entities;
 
 public interface Event {
 
-	public boolean checkAssetsCorrect();
+	public boolean assetsConfirmed();
 }

@@ -1,21 +1,18 @@
 package es.mde.entities;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
-public class TaskImpl implements Task{
+public class TaskImpl{
 
 	private String name;
 	private String description;
 	private int time;
-	private Collection<EventImpl> events = new ArrayList<EventImpl>();
-	private Collection<AssetImpl> persons = new ArrayList<AssetImpl>();
+	private float taskCost;
 
-	public TaskImpl(String nombre, int tiempo, String description) {
+	public TaskImpl(String nombre, String description, int tiempo, float taskCost) {
 		super();
 		this.name = nombre;
 		this.description = description;
 		this.time = tiempo;
+		this.taskCost = taskCost;
 	}
 
 	public TaskImpl() {
@@ -49,26 +46,14 @@ public class TaskImpl implements Task{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public Collection<EventImpl> getEvents() {
-		return events;
+	public float getTaskCost() {
+		return taskCost;
 	}
 
-	public void setEvents(Collection<EventImpl> events) {
-		this.events = events;
+	public void setTaskCost(float taskCost) {
+		this.taskCost = taskCost;
 	}
 
-	public Collection<AssetImpl> getPersons() {
-		return persons;
-	}
+	
 
-	public void setPersons(Collection<AssetImpl> persons) {
-		this.persons = persons;
-	}
-
-	@Override
-	public Collection<String> minimumAssets() {
-		
-		return null;
-	}
 }

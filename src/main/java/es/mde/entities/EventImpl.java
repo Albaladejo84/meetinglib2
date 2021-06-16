@@ -1,41 +1,34 @@
 package es.mde.entities;
 
 import java.time.LocalDateTime;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 
 public class EventImpl implements Event{
 
-	private Collection<TaskImpl> eventTasksRequired = new ArrayList<TaskImpl>();
-	private List<AssetImpl> requiredAssets = new ArrayList<AssetImpl>();
+	private String place;
 	private LocalDateTime begining;
-	private LocalDateTime ending;
-	private boolean confirmed;
-
+	
+	
 	public EventImpl() {
 
 	}
 
-	public EventImpl(List<AssetImpl> requiredAssets, Collection<TaskImpl> eventTaskRequired, LocalDateTime begining) {
+	public EventImpl(String place, LocalDateTime begining) {
 		super();
-		this.eventTasksRequired = eventTaskRequired;
-		this.requiredAssets = requiredAssets;
 		this.begining = begining;
-		this.confirmed = false;
+		this.place = place;
 	}
 
-	public boolean isConfirmed() {
-		return confirmed;
+
+	public String getPlace() {
+		return place;
 	}
 
-	public void setConfirmed(boolean confirmed) {
-		this.confirmed = confirmed;
-	}
-
-	public Collection<TaskImpl> getEventTaskRequired() {
-		return eventTasksRequired;
+	public void setPlace(String place) {
+		this.place = place;
 	}
 
 	public LocalDateTime getBegining() {
@@ -46,34 +39,12 @@ public class EventImpl implements Event{
 		this.begining = begining;
 	}
 
-	public LocalDateTime getEnding() {
-		return ending;
-	}
 
-	public void setEnding(LocalDateTime ending) {
-		this.ending = ending;
-	}
-
-	public List<AssetImpl> getRequiredAssets() {
-		return requiredAssets;
-	}
-
-	public void setRequiredAssets(List<AssetImpl> requiredAssets) {
-
-		this.requiredAssets = requiredAssets;
-	}
-
-	public void setEventTask(Collection<TaskImpl> eventTypesRequired) {
-		this.eventTasksRequired = eventTypesRequired;
-	}
-
-	public void addAssetToRequiredList(AssetImpl newAsset) {
-		requiredAssets.add(newAsset);
-	}
 
 	@Override
-	public boolean checkAssetsCorrect() {
+	public boolean assetsConfirmed() {
 		
 		return true;
 	}
+	
 }

@@ -1,24 +1,29 @@
 package es.mde.entities;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
-public class AssetImpl implements Asset{
-
+public class AssetImpl{
 
 	private String name;
 	private String mail;
 	private String phone;
-	private Collection<Task> taskAble = new ArrayList<Task>();
+	private String description;
 	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public AssetImpl() {
 	}
 	
-	public AssetImpl(String name, String mail, String phone) {
+	public AssetImpl(String name, String mail, String phone, String description) {
 		super();
 		this.name = name;
 		this.mail = mail;
 		this.phone = phone;
+		this.description = description;
 	
 	}
 
@@ -47,15 +52,5 @@ public class AssetImpl implements Asset{
 		this.mail = email;
 	}
 
-	@Override
-	public boolean isCapableOfTask(TaskImpl task) {
-		boolean able = false;
-		for (Task taskAbleItem : taskAble) {
-			if (taskAbleItem.equals(task)) {
-				able = true;
-			}
-		}
-		return able;
-	}
-	
+
 }
